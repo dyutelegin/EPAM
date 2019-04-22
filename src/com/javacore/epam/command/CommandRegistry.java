@@ -17,6 +17,7 @@ public enum CommandRegistry {
         commands.put("creator", commandAuthor);
         commands.put("father", commandAuthor);
         commands.put("Time", new CommandTime("Time"));
+        commands.put("Help", new CommandHelp("Help"));
     }
     public ACommand getCommand(String name){
         return  commands.get(name);

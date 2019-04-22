@@ -34,6 +34,23 @@ public class ConsoleCanvas extends Canvas {
         }
     }
 
+    public void drawCircle(int cx, int cy, int radius) {
+        for (int x = 0; x < height; x++) {
+            for (int y = 0; y < width; y++) {
+                int sqDist = (cx - x) * (cx - x) + (cy - y) * (cy - y);
+                if (sqDist <= radius * radius)
+                    pixes[x][y] = '#';
+            }
+        }
+        for (int row = 0; row < height; row++) {
+            for (int col = 0; col < width; col++) {
+                System.out.print(pixes[row][col]);
+            }
+
+            System.out.print("\n");
+        }
+    }
+
     public void setSymbolAt(int x, int y, char symbol){
         pixes[x][y] = symbol;
     }

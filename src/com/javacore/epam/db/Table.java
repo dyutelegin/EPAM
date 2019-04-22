@@ -20,6 +20,12 @@ public class Table {
         this.columns = columns;
     }
 
+    public List<String> getColumns () {
+
+        return columns;
+
+    }
+
     public void insert(Record record){
         records.add(record);
     }
