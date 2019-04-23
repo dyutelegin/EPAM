@@ -26,11 +26,12 @@ public class ConsoleCanvas extends Canvas {
     }
 
     public void draw() {
-        for (int i = 0; i<height; i++){
-            System.out.print("\n");
-            for (int j=0; j<width; j++){
-                System.out.print(pixes[i][j]);
+        for (int row = 0; row < height; row++) {
+            for (int col = 0; col < width; col++) {
+                System.out.print(pixes[row][col]);
             }
+
+            System.out.print("\n");
         }
     }
 
@@ -72,6 +73,20 @@ public class ConsoleCanvas extends Canvas {
 
     public void drawTextAt(int x, int y, String text){
 
+    }
+
+    private void drawLine(int x, int y, int xend, int yend) {
+        for (int row = x; row <= xend; row++) {
+            for (int col = y; col <= yend; col++) {
+                pixes[row][col] = '#';
+            }
+        }
+    }
+    public void drawSquare(int x, int y, int size) {
+        drawLine(x, y, x, y + size);
+        drawLine(x, y, x + size, y);
+        drawLine(x + size, y, x + size, y + size);
+        drawLine(x, y + size, x + size, y + size);
     }
 
     @Override

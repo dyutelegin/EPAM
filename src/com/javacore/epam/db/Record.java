@@ -30,6 +30,16 @@ public class Record {
         return Integer.parseInt(values.get(index));
     }
 
+    public int getInt(String fieldName, int defaultName){
+        int index = columns.indexOf(fieldName);
+
+        String valueString = values.get(index);
+        if (valueString == null){
+            return defaultName;
+        }
+        return Integer.parseInt(valueString);
+    }
+
     public boolean getBoolean(String fieldName) throws FieldNotFoundExeption {
         int index = columns.indexOf(fieldName);
 

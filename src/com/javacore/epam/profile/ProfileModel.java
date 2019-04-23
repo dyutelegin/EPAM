@@ -1,12 +1,25 @@
 package com.javacore.epam.profile;
 
 import com.javacore.epam.common.BaseModel;
+import com.javacore.epam.db.Record;
 
 public class ProfileModel extends BaseModel {
     private int id;
     private String firstName;
     private  String lastName;
     private boolean active;
+    private boolean deceased;
+
+    public boolean isDeceased() {
+        return deceased;
+    }
+
+    public ProfileModel setDeceased(boolean deceased) {
+        this.deceased = deceased;
+        return this;
+    }
+
+    public ProfileModel(){}
 
     public static ProfileModel randomModel(){
         int rId = (int) (10*Math.random());
@@ -15,6 +28,17 @@ public class ProfileModel extends BaseModel {
         String rLastName  = "Balmer_" + rId;
         return new ProfileModel(rId, rFirstName, rLastName, rActive);
     }
+
+ /*   public static ProfileModel modelFromRecord(Record record){
+        ProfileModel model = new ProfileModel();
+        try {
+            model.setId(record.getInt("id"));
+            model.setDeceased(record.getBoolean("deceased"));
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    };*/
 
     public ProfileModel(int id, String firstName, String lastName, boolean active) {
         this.id = id;

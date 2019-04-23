@@ -5,6 +5,7 @@ import com.javacore.epam.common.Canvas;
 
 public class ProfileView extends BaseView {
 
+
     @Override
     public void draw(Canvas canvas) {
         canvas.drawSquare(10);

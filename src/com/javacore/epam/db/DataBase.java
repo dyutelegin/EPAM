@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Map;
 
 public class DataBase {
+
+   // public static final String[] CRIMINAL_COLOUMNS = new String[];
+
     Map<String, Table> tables;
     public static List<String[]> readDataFile(String fileName){
         FileInputStream fis = null;

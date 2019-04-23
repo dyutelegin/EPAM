@@ -3,6 +3,7 @@ package com.javacore.epam.common;
 public abstract class BaseView {
 
     protected BaseModel model;
+
     public void draw(){
         System.out.println("Drawing should be implemented...");
     }
