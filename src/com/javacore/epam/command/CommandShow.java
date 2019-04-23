@@ -9,9 +9,10 @@ public class CommandShow extends ACommand {
 
     @Override
     public void execute() {
-        ConsoleCanvas canvas = new ConsoleCanvas(20, 40);
-        canvas.drawCircle(10, 7, 5);
-        canvas.drawSquare(15, 2, 10);
+        ConsoleCanvas canvas = new ConsoleCanvas(80, 33);
+        canvas.drawTextAt(2,2, "John Delinger");
+        canvas.drawCircle(6, 72, 4);
+        canvas.drawSquare(11, 68, 8);
         canvas.draw();
     }
 }

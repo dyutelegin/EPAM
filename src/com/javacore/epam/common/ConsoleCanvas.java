@@ -20,7 +20,7 @@ public class ConsoleCanvas extends Canvas {
     private void reset() {
         for (int i = 0; i<height; i++){
             for (int j=0; j<width; j++){
-                pixes[i][j]='.';
+                pixes[i][j]=' ';
             }
         }
     }
@@ -42,13 +42,6 @@ public class ConsoleCanvas extends Canvas {
                 if (sqDist <= radius * radius)
                     pixes[x][y] = '#';
             }
-        }
-        for (int row = 0; row < height; row++) {
-            for (int col = 0; col < width; col++) {
-                System.out.print(pixes[row][col]);
-            }
-
-            System.out.print("\n");
         }
     }
 
@@ -72,7 +65,8 @@ public class ConsoleCanvas extends Canvas {
     }
 
     public void drawTextAt(int x, int y, String text){
-
+        for(int i=0; i<text.length(); i++)
+        pixes[x][y+i] = text.charAt(i);
     }
 
     private void drawLine(int x, int y, int xend, int yend) {
@@ -87,6 +81,11 @@ public class ConsoleCanvas extends Canvas {
         drawLine(x, y, x + size, y);
         drawLine(x + size, y, x + size, y + size);
         drawLine(x, y + size, x + size, y + size);
+        for (int i = x+1; i< (x+size); i++){
+            for (int j=y+1; j< (y+size); j++){
+                pixes[i][j] = ' ';
+            }
+        }
     }
 
     @Override

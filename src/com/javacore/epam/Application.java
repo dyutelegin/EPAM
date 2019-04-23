@@ -78,8 +78,6 @@ public class Application {
             nfe.printStackTrace();
         }
         System.out.println("All is ok, all exceptions have been caught!"); */
-//        ConsoleCanvas consoleCanvas = new ConsoleCanvas(20,40);
- //       consoleCanvas.drawCircle(15,2,10);
 
   /*      DataBase db = new DataBase();
         Thread thread1 = new Thread(){
@@ -90,7 +88,6 @@ public class Application {
                     db.select();
                 }
                 catch (InterruptedException e){
-
                 }
             }
         };
@@ -124,11 +121,6 @@ public class Application {
             System.out.println(s);
         }*/
 
-
-/*        ConsoleCanvas consoleCanvas = new ConsoleCanvas(15,15);
-        consoleCanvas.drawSquareAt(5,5, 1);
-        consoleCanvas.draw(); */
-
  /*       changeState(new StateIdle(), "Idle");
         String commandName = "test command";
         currentState.onCommand(commandName);
@@ -142,6 +134,7 @@ public class Application {
         while (true){
             String commandName = reader.readLine();
             ACommand command = CommandRegistry.INSTANCE.getCommand(commandName);
+            for(String listCommand: args)
             if (!commandName.isEmpty()) {
                 if(commandName.equals(args[0])){
                     command.execute();

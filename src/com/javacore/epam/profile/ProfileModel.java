@@ -3,12 +3,20 @@ package com.javacore.epam.profile;
 import com.javacore.epam.common.BaseModel;
 import com.javacore.epam.db.Record;
 
+import java.util.Date;
+
 public class ProfileModel extends BaseModel {
     private int id;
     private String firstName;
     private  String lastName;
     private boolean active;
     private boolean deceased;
+    private Date dateOfBirth;
+    private Date dateOfDeath;
+    private int numberOfCrimes;
+    private String nickname;
+    private int crimeFamilyId;
+
 
     public boolean isDeceased() {
         return deceased;
